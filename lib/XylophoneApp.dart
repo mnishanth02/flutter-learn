@@ -16,6 +16,7 @@ class XylophoneApp extends StatelessWidget {
         onPressed: () {
           playSound(num);
         },
+        child: null,
       ),
     );
   }

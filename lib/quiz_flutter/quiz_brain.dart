@@ -1,4 +1,4 @@
-import 'package:flutter_app/question.dart';
+import 'package:flutter_app/quiz_flutter/question.dart';
 
 class QuizBrain {
   int _questionIndex = 0;
@@ -36,11 +36,27 @@ class QuizBrain {
     }
   }
 
+  bool isNextQuestionAvailabel() {
+    if (_questionIndex < _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   String getQuestionText() {
     return _questionBank[_questionIndex].questionText;
   }
 
   bool getQuestionAnswer() {
     return _questionBank[_questionIndex].questionAnswer;
+  }
+
+  int getTotalQuestionLength() {
+    return _questionBank.length - 1;
+  }
+
+  void resetQuestion() {
+    _questionIndex = 0;
   }
 }
